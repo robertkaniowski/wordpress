@@ -1,0 +1,37 @@
+@mixin for-desktop {
+  @media (min-width: 1151px) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media only screen and (max-width: 1150px) {
+    @content;
+  }
+}
+
+@mixin for-phone {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-phone-small {
+  @media only screen and (max-width: 550px) {
+    @content;
+  }
+}
+
+@mixin for-phone-up {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: wrap;
+}

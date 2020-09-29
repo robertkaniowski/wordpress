@@ -1,0 +1,313 @@
+.header {
+  height: 75px;
+  color: $theme-color;
+  font-family: "Avenir 85 Heavy";
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  @include for-tablet-only {
+    padding-top: 23px;
+  }
+  &--open {
+    height: auto;
+    background-color: $theme-color;
+
+    .header {
+      &__wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+      &__top {
+        order: 2;
+        display: flex;
+        flex-direction: column-reverse;
+
+        .social_href {
+          .mobile {
+            display: block;
+            width: 24px;
+            height: 24px;
+          }
+          .deskop {
+            display: none;
+          }
+        }
+        .social_list {
+          padding-left: 37px;
+          padding-right: 37px;
+          padding-bottom: 38px;
+          padding-top: 44px;
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+        }
+        .single_link {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          color: #fff;
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+          position: relative;
+          &:before,
+          &:after {
+            border-right: 2px solid;
+            content: "";
+            display: block;
+            height: 8px;
+            margin-top: -6px;
+            position: absolute;
+            -moz-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+            right: 10px;
+            top: 50%;
+            width: 0;
+          }
+          &:after {
+            margin-top: -1px;
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
+      }
+      &__menu {
+        display: flex;
+        padding-top: 67px;
+
+        #menu-main-menu {
+          flex-direction: column;
+          align-items: flex-start;
+          li {
+            color: #fff;
+            width: 100%;
+            position: relative;
+            padding: {
+              top: 13px;
+              bottom: 13px;
+            }
+            a {
+              &:before,
+              &:after {
+                border-right: 2px solid;
+                content: "";
+                display: block;
+                height: 8px;
+                margin-top: -6px;
+                position: absolute;
+                -moz-transform: rotate(135deg);
+                -o-transform: rotate(135deg);
+                -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+                right: 10px;
+                top: 50%;
+                width: 0;
+              }
+              &:after {
+                margin-top: -1px;
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+              }
+              font-size: 12px;
+              font-weight: 800;
+              width: 100%;
+            }
+          }
+        }
+      }
+      &__logo_image {
+        background-image: url("../../assets/images/TGH_Doctor_Black_CENTRED_white.png") !important;
+      }
+      &__bottom {
+        padding-left: 37px;
+      }
+    }
+    .searchform {
+      .event_form {
+        display: none;
+      }
+      .search_content {
+        display: flex;
+        flex-direction: revert;
+        input {
+          background-color: transparent;
+        }
+        .fa {
+          color: #fff;
+        }
+      }
+    }
+    .menu-item-home {
+      display: none;
+    }
+  }
+  &__menu {
+    width: 100%;
+    @include for-tablet-only {
+      display: none;
+    }
+    &-list {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-item-home {
+    }
+  }
+  &__wrapper {
+    position: relative;
+    .header__logo_image {
+      display: none;
+      background-image: url("../../assets/images/TGH_Doctor_Black_CENTRED_nav.png");
+      width: 88px;
+      height: 40px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0px;
+      left: 20px;
+      @include for-tablet-only {
+        display: block;
+      }
+    }
+  }
+  &__top {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 14px;
+    padding-top: 10px;
+    @include for-tablet-only {
+      display: none;
+    }
+    display: flex;
+    justify-content: flex-end;
+    .social_list {
+      display: flex;
+
+      img {
+        width: 14px;
+        height: 14px;
+        margin-right: 14px;
+      }
+      .mobile {
+        display: none;
+      }
+    }
+    .single_link {
+      position: relative;
+      margin-left: 19px;
+      font-family: "Avenir 85 Heavy";
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      a::after {
+        content: "";
+        background-color: $theme-color;
+        width: 1px;
+        height: 10px;
+        position: absolute;
+        left: -19px;
+        top: 2px;
+      }
+    }
+  }
+  &__bottom {
+    @include for-tablet-only {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.hamburger {
+  width: 24px;
+  height: 20px;
+  position: relative;
+  display: none;
+  cursor: pointer;
+
+  @include for-tablet-only {
+    display: block;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    background: $theme-color;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+
+    &:nth-child(even) {
+      left: 50%;
+      border-radius: 0 9px 9px 0;
+    }
+
+    &:nth-child(odd) {
+      left: 0px;
+      border-radius: 9px 0 0 9px;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      top: 0px;
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      top: 8px;
+    }
+
+    &:nth-child(5),
+    &:nth-child(6) {
+      top: 16px;
+    }
+  }
+
+  &--open {
+    span {
+      background-color: #fff;
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        left: 2px;
+        top: 5px;
+      }
+
+      &:nth-child(2) {
+        left: calc(50% - 2px);
+        transform: rotate(-45deg);
+        top: 5px;
+      }
+
+      &:nth-child(3) {
+        left: -50%;
+        opacity: 0;
+      }
+
+      &:nth-child(4) {
+        left: 100%;
+        opacity: 0;
+      }
+
+      &:nth-child(5) {
+        left: 2px;
+        top: 13px;
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(6) {
+        left: calc(50% - 2px);
+        top: 13px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
